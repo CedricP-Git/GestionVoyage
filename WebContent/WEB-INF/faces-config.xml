@@ -15,10 +15,38 @@
 		</navigation-case>
 	</navigation-rule>
 	<navigation-rule>
-		<from-view-id>/main.xhtml</from-view-id>
+		<from-view-id>/destinations.xhtml</from-view-id>
 		<navigation-case>
-			<from-outcome>update</from-outcome>
-			<to-view-id>/update.xhtml</to-view-id>
+			<from-outcome>updateDestination</from-outcome>
+			<to-view-id>/updateDestination.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/hotels.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>updateHotel</from-outcome>
+			<to-view-id>/updateHotel.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/travelers.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>updateTraveler</from-outcome>
+			<to-view-id>/updateTraveler.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/bookings.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>updateBooking</from-outcome>
+			<to-view-id>/updateBooking.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/comments.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>updateComment</from-outcome>
+			<to-view-id>/updateComment.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 </faces-config>

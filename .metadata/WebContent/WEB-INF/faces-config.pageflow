@@ -2,9 +2,22 @@
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf16025067645800" configfile="/TravelAgency/WebContent/WEB-INF/faces-config.xml">
   <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="122" y="370" id="pf16025152053580" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf16025152053581 pf16025152053582" path="/index.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="erreur.xhtml" x="338" y="562" id="pf16025152053583" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" inlinks="pf16025152053581" path="/erreur.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="main.xhtml" id="pf16025152053584" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" outlinks="pf16025152053585" inlinks="pf16025152053582" path="/main.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="update.xhtml" id="pf16025152053586" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf16025152053585" path="/update.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="main.xhtml" id="pf16025152053584" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf16025152053582" path="/main.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="destinations.xhtml" id="pf16025160089787" referenceLink="//@navigationRule.5/@fromViewId|" outlinks="pf16025160089788" path="/destinations.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="updateDestination.xhtml" id="pf16025160089789" referenceLink="//@navigationRule.5/@navigationCase.0/@toViewId|" inlinks="pf16025160089788" path="/updateDestination.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="hotels.xhtml" id="pf160251600897810" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf160251600897811" path="/hotels.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="updateHotel.xhtml" id="pf160251600897812" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf160251600897811" path="/updateHotel.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="travelers.xhtml" id="pf160251600897813" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf160251600897814" path="/travelers.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="updateTraveler.xhtml" id="pf160251600897815" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" inlinks="pf160251600897814" path="/updateTraveler.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="bookings.xhtml" id="pf160251603485416" referenceLink="//@navigationRule.4/@fromViewId|" outlinks="pf160251603485417" path="/bookings.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="updateBooking.xhtml" id="pf160251603485418" referenceLink="//@navigationRule.4/@navigationCase.0/@toViewId|" inlinks="pf160251603485417" path="/updateBooking.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="comments.xhtml" id="pf160251604990721" referenceLink="//@navigationRule.5/@fromViewId|" outlinks="pf160251604990722" path="/comments.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="updateComment.xhtml" id="pf160251604990723" referenceLink="//@navigationRule.5/@navigationCase.0/@toViewId|" inlinks="pf160251604990722" path="/updateComment.xhtml"/>
   <links id="pf16025152053581" target="pf16025152053583" source="pf16025152053580" outcome="rejected"/>
-  <links id="pf16025152053585" target="pf16025152053586" source="pf16025152053584" outcome="update"/>
   <links id="pf16025152053582" target="pf16025152053584" source="pf16025152053580" outcome="accepted"/>
+  <links id="pf16025160089788" target="pf16025160089789" source="pf16025160089787" outcome="updateDestination"/>
+  <links id="pf160251600897811" target="pf160251600897812" source="pf160251600897810" outcome="updateHotel"/>
+  <links id="pf160251600897814" target="pf160251600897815" source="pf160251600897813" outcome="updateTraveler"/>
+  <links id="pf160251603485417" target="pf160251603485418" source="pf160251603485416" outcome="updateBooking"/>
+  <links id="pf160251604990722" target="pf160251604990723" source="pf160251604990721" outcome="updateComment"/>
 </pageflow:Pageflow>
