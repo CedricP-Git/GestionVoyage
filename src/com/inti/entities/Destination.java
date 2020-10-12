@@ -21,7 +21,7 @@ public class Destination implements Serializable {
 	private Long longitude;
 	private Long latitude;
 	@OneToMany(mappedBy = "destination")
-	private Set<Hotel> hotels=new HashSet<Hotel>();
+	private Set<Hotel> hotels = new HashSet<Hotel>();
 	
 	public Destination() {
 
