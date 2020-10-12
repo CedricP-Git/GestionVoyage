@@ -1,7 +1,9 @@
 package com.inti.entities;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,10 +23,10 @@ public class Hotel implements Serializable {
 	private int nbStar;
 	@ManyToOne
 	private Destination destination;
-	@OneToMany(mappedBy = "idHotel")
-	private List<Booking> bookings;
-	@OneToMany(mappedBy = "idHotel")
-	private List<Comment> comments;
+	@OneToMany(mappedBy = "hotel")
+	private Set<Booking> bookings = new HashSet<Booking>();
+	@OneToMany(mappedBy = "hotel")
+	private Set<Comment> comments = new HashSet<Comment>();
 	
 	public Hotel() {
 
@@ -70,6 +72,23 @@ public class Hotel implements Serializable {
 	public void setDestination(Destination destination) {
 		this.destination = destination;
 	}
+
+	public Set<Booking> getBookings() {
+		return bookings;
+	}
+
+	public void setBookings(Set<Booking> bookings) {
+		this.bookings = bookings;
+	}
+
+	public Set<Comment> getComments() {
+		return comments;
+	}
+
+	public void setComments(Set<Comment> comments) {
+		this.comments = comments;
+	}
+	
 	
 	
 	

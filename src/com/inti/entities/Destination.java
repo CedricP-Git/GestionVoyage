@@ -1,7 +1,9 @@
 package com.inti.entities;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,8 +20,8 @@ public class Destination implements Serializable {
 	private Long idDestination;
 	private Long longitude;
 	private Long latitude;
-	@OneToMany(mappedBy = "idDestination")
-	private List<Hotel> hotels;
+	@OneToMany(mappedBy = "destination")
+	private Set<Hotel> hotels=new HashSet<Hotel>();
 	
 	public Destination() {
 
@@ -58,11 +60,11 @@ public class Destination implements Serializable {
 		return serialVersionUID;
 	}
 
-	public List<Hotel> getHotels() {
+	public Set<Hotel> getHotels() {
 		return hotels;
 	}
 
-	public void setHotels(List<Hotel> hotels) {
+	public void setHotels(Set<Hotel> hotels) {
 		this.hotels = hotels;
 	}
 	
