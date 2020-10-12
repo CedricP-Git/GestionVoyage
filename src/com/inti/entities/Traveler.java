@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Traveller implements Serializable{
+public class Traveler implements Serializable{
 	/**
 	 * 
 	 */
@@ -24,7 +24,7 @@ public class Traveller implements Serializable{
 	@OneToMany (mappedBy = "idTraveller")
 	private List<Booking> bookings;
 	
-	public Traveller() {}
+	public Traveler() {}
 
 	public Long getIdTraveller() {
 		return idTraveller;
@@ -77,7 +77,7 @@ public class Traveller implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Traveller other = (Traveller) obj;
+		Traveler other = (Traveler) obj;
 		if (age == null) {
 			if (other.age != null)
 				return false;

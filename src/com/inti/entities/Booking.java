@@ -24,7 +24,7 @@ public class Booking implements Serializable{
 	private Date dateBooking;
 	private Integer nbDays;
 	@ManyToOne
-	private Traveller traveller;
+	private Traveler traveller;
 	
 	public Booking() {}
 
@@ -52,11 +52,11 @@ public class Booking implements Serializable{
 		this.nbDays = nbDays;
 	}
 
-	public Traveller getTraveller() {
+	public Traveler getTraveller() {
 		return traveller;
 	}
 
-	public void setTraveller(Traveller traveller) {
+	public void setTraveller(Traveler traveller) {
 		this.traveller = traveller;
 	}
 
