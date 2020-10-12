@@ -1,5 +1,7 @@
 package com.inti.service.interfaces;
 
-public interface IHotelService {
+import com.inti.entities.Hotel;
+
+public interface IHotelService extends IService<Hotel> {
 
 }

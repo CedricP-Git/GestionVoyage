@@ -1,8 +1,8 @@
 package com.inti.service.impl;
 
-import com.inti.dao.interfaces.ICommentDAO;
 import com.inti.entities.Comment;
+import com.inti.service.interfaces.ICommentService;
 
-public class CommentService extends BaseService<Comment> implements ICommentDAO {
+public class CommentService extends BaseService<Comment> implements ICommentService {
 
 }

@@ -1,5 +1,7 @@
 package com.inti.service.interfaces;
 
-public interface IDestinationService {
+import com.inti.entities.Destination;
+
+public interface IDestinationService extends IService<Destination>  {
 
 }

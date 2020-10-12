@@ -2,7 +2,6 @@ package com.inti.entities;
 
 import java.io.Serializable;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -88,8 +87,5 @@ public class Hotel implements Serializable {
 	public void setComments(Set<Comment> comments) {
 		this.comments = comments;
 	}
-	
-	
-	
-	
+
 }

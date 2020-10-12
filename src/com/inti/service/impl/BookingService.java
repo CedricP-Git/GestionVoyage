@@ -1,8 +1,8 @@
 package com.inti.service.impl;
 
-import com.inti.dao.interfaces.IBookingDAO;
 import com.inti.entities.Booking;
+import com.inti.service.interfaces.IBookingService;
 
-public class BookingService extends BaseService<Booking> implements IBookingDAO {
+public class BookingService extends BaseService<Booking> implements IBookingService {
 
 }

@@ -1,2 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pageflow:Pageflow xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf16025067645800" configfile="/TravelAgency/WebContent/WEB-INF/faces-config.xml"/>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf16025067645800" configfile="/TravelAgency/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="122" y="370" id="pf16025152053580" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf16025152053581 pf16025152053582" path="/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="erreur.xhtml" x="338" y="562" id="pf16025152053583" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" inlinks="pf16025152053581" path="/erreur.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="main.xhtml" id="pf16025152053584" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" outlinks="pf16025152053585" inlinks="pf16025152053582" path="/main.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="update.xhtml" id="pf16025152053586" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf16025152053585" path="/update.xhtml"/>
+  <links id="pf16025152053581" target="pf16025152053583" source="pf16025152053580" outcome="rejected"/>
+  <links id="pf16025152053585" target="pf16025152053586" source="pf16025152053584" outcome="update"/>
+  <links id="pf16025152053582" target="pf16025152053584" source="pf16025152053580" outcome="accepted"/>
+</pageflow:Pageflow>

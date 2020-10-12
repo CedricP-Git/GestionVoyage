@@ -1,5 +1,7 @@
 package com.inti.service.interfaces;
 
-public interface ITravelerService {
+import com.inti.entities.Traveler;
+
+public interface ITravelerService extends IService<Traveler> {
 
 }
