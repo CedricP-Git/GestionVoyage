@@ -1,11 +1,13 @@
 package com.inti.entities;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Destination implements Serializable {
@@ -16,6 +18,8 @@ public class Destination implements Serializable {
 	private Long idDestination;
 	private Long longitude;
 	private Long latitude;
+	@OneToMany(mappedBy = "idDestination")
+	private List<Hotel> hotels;
 	
 	public Destination() {
 
@@ -53,4 +57,16 @@ public class Destination implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+
+	public List<Hotel> getHotels() {
+		return hotels;
+	}
+
+	public void setHotels(List<Hotel> hotels) {
+		this.hotels = hotels;
+	}
+	
+	
+	
+	
 }

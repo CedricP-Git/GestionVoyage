@@ -3,6 +3,7 @@ package com.inti.entities;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Comment implements Serializable{
@@ -13,6 +14,8 @@ public class Comment implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private Long idComment;
 	private String comment;
+	@ManyToOne
+	private Hotel hotel;
 	
 	public Comment() {}
 
@@ -32,36 +35,17 @@ public class Comment implements Serializable{
 		this.comment = comment;
 	}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((comment == null) ? 0 : comment.hashCode());
-		result = prime * result + ((idComment == null) ? 0 : idComment.hashCode());
-		return result;
+	public Hotel getHotel() {
+		return hotel;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Comment other = (Comment) obj;
-		if (comment == null) {
-			if (other.comment != null)
-				return false;
-		} else if (!comment.equals(other.comment))
-			return false;
-		if (idComment == null) {
-			if (other.idComment != null)
-				return false;
-		} else if (!idComment.equals(other.idComment))
-			return false;
-		return true;
+	public void setHotel(Hotel hotel) {
+		this.hotel = hotel;
 	}
+	
+	
+
+
 	
 	
 
