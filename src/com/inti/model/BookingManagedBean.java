@@ -9,13 +9,13 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import com.inti.entities.Booking;
-import com.inti.entities.Comment;
+import com.inti.entities.Hotel;
 import com.inti.entities.Traveler;
 import com.inti.service.impl.BookingService;
-import com.inti.service.impl.CommentService;
+import com.inti.service.impl.HotelService;
 import com.inti.service.impl.TravelerService;
 import com.inti.service.interfaces.IBookingService;
-import com.inti.service.interfaces.ICommentService;
+import com.inti.service.interfaces.IHotelService;
 import com.inti.service.interfaces.ITravelerService;
 
 @ManagedBean
@@ -25,10 +25,10 @@ public class BookingManagedBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private Booking booking = new Booking();
 	private List<Booking> bookings = new ArrayList<Booking>();
-	private List<Comment> Comments = new ArrayList<Comment>();
+	private List<Hotel> hotels = new ArrayList<Hotel>();
 	private List<Traveler> travelers = new ArrayList<Traveler>();
 	IBookingService bookingService = new BookingService();
-	ICommentService CommentService = new CommentService();
+	IHotelService hotelService = new HotelService();
 	ITravelerService travelerService = new TravelerService();
 
 	
@@ -53,13 +53,13 @@ public class BookingManagedBean implements Serializable {
 		this.bookings = bookings;
 	}
 
-	public List<Comment> getComments() {
-		this.Comments = CommentService.findAll(Comment.class);
-		return Comments;
+	public List<Hotel> getHotels() {
+		this.hotels = hotelService.findAll(Hotel.class);
+		return hotels;
 	}
 
-	public void setComments(List<Comment> Comments) {
-		this.Comments = Comments;
+	public void setHotels(List<Hotel> hotels) {
+		this.hotels = hotels;
 	}
 	
 	public List<Traveler> getTravelers() {
