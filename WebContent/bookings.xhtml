@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Bookings</title>
+</head>
+<h:body>
+	<h:form id="form1">
+		<h:panelGrid columns="2">
+			<h:outputLabel value="Date" />
+			<h:inputText value="#{bookingManagedBean.booking.dateBooking}">
+				<f:convertDateTime pattern="dd-MM-yyyy" />
+			</h:inputText>
+			<h:outputLabel value="NbDays" />
+			<h:inputText value="#{bookingManagedBean.booking.nbDays}" />
+			<h:outputLabel value="Traveler" />
+			<h:selectOneMenu converter="travelerConverter" value="#{bookingManagedBean.booking.traveler}" >
+			<f:selectItem itemValue="#{null}" itemLabel="--Select--" />
+			<f:selectItems value="#{bookingManagedBean.travelers}" var="t" itemLabel="#{t.name}" itemValue="#{d}"/>
+			</h:selectOneMenu>
+			<h:outputLabel value="Hotel" />
+			<h:selectOneMenu converter="hotelConverter" value="#{bookingManagedBean.booking.hotel}" >
+			<f:selectItem itemValue="#{null}" itemLabel="--Select--" />
+			<f:selectItems value="#{bookingManagedBean.hotels}" var="h" itemLabel="#{h.name}" itemValue="#{d}"/>
+			</h:selectOneMenu>
+			<h:commandButton action="#{bookingManagedBean.saveBooking()}"
+				value="Save"></h:commandButton>
+		</h:panelGrid>
+	</h:form>
+	<h:form id="form2">
+		<p:dataTable value="#{bookingManagedBean.bookings}" var="b">
+			<p:column headerText="Date">
+				<h:outputText value="#{b.dateBooking}" />
+			</p:column>
+			<p:column headerText="NbDays">
+				<h:outputText value="#{b.nbDays}" />
+			</p:column>
+			<p:column headerText="Action">
+				<h:commandButton action="#{bookingManagedBean.deleteBooking(b)}"
+					value="Delete" />
+				<h:commandButton action="#{bookingManagedBean.edit(b)}"
+					value="Edit" />
+			</p:column>
+		</p:dataTable>
+	</h:form>
+</h:body>
+</html>

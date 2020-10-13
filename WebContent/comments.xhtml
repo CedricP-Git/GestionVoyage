@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Comments</title>
+</head>
+<h:body>
+	<h:form id="form1">
+		<h:panelGrid columns="2">
+			<h:outputLabel value="Comment" />
+			<h:inputText value="#{commentManagedBean.comment.comment}" />
+			<h:outputLabel value="Hotel" />
+			<h:selectOneMenu converter="hotelConverter" value="#{commentManagedBean.comment.hotel}" >
+			<f:selectItem itemValue="#{null}" itemLabel="--Select--" />
+			<f:selectItems value="#{commentManagedBean.hotels}" var="h" itemLabel="#{h.name}" itemValue="#{d}"/>
+			</h:selectOneMenu>
+			<h:commandButton action="#{commentManagedBean.saveComment()}"
+				value="Save"></h:commandButton>
+		</h:panelGrid>
+	</h:form>
+	<h:form id="form2">
+		<p:dataTable value="#{commentManagedBean.comments}" var="c">
+			<p:column headerText="Comment">
+				<h:outputText value="#{c.comment}" />
+			</p:column>
+			<p:column headerText="Action">
+				<h:commandButton action="#{commentManagedBean.deleteComment(c)}"
+					value="Delete" />
+				<h:commandButton action="#{commentManagedBean.edit(c)}"
+					value="Edit" />
+			</p:column>
+		</p:dataTable>
+	</h:form>
+</h:body>
+</html>

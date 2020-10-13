@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Travelers</title>
+</head>
+<h:body>
+	<h:form id="form1">
+		<h:panelGrid columns="2">
+			<h:outputLabel value="Name" />
+			<h:inputText value="#{travelerManagedBean.traveler.name}" />
+			<h:outputLabel value="Firstamne" />
+			<h:inputText value="#{travelerManagedBean.traveler.firstName}" />
+			<h:outputLabel value="Age" />
+			<h:inputText value="#{travelerManagedBean.traveler.age}" />
+			<h:commandButton action="#{travelerManagedBean.saveTraveler()}"
+				value="Save"></h:commandButton>
+		</h:panelGrid>
+	</h:form>
+	<h:form id="form2">
+		<p:dataTable value="#{travelerManagedBean.travelers}" var="t">
+			<p:column headerText="Name">
+				<h:outputText value="#{t.name}" />
+			</p:column>
+			<p:column headerText="#{Firstname}">
+				<h:outputText value="#{t.firstName}" />
+			</p:column>
+			<p:column headerText="Action">
+				<h:commandButton action="#{travelerManagedBean.deleteTraveler(t)}"
+					value="Delete" />
+				<h:commandButton action="#{travelerManagedBean.edit(t)}"
+					value="Edit" />
+			</p:column>
+		</p:dataTable>
+	</h:form>
+</h:body>
+</html>
