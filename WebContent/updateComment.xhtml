@@ -10,8 +10,8 @@
 </head>
 <body>
 	<h:form action="">
-		<h:panelGrid columns="1">
-		<h:outputLabel value=Comment />
+		<h:panelGrid columns="2">
+		<h:outputLabel value="Comment" />
 		<h:inputText value="#{commentManagedBean.comment.comment}"/>
 		<h:commandButton action="#{commentManagedBean.update()}" value="Update" />
 		</h:panelGrid>
