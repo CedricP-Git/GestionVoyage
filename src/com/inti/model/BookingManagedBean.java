@@ -9,15 +9,12 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import com.inti.entities.Booking;
-import com.inti.entities.Hotel;
 import com.inti.entities.Comment;
 import com.inti.entities.Traveler;
 import com.inti.service.impl.BookingService;
-import com.inti.service.impl.HotelService;
 import com.inti.service.impl.CommentService;
 import com.inti.service.impl.TravelerService;
 import com.inti.service.interfaces.IBookingService;
-import com.inti.service.interfaces.IHotelService;
 import com.inti.service.interfaces.ICommentService;
 import com.inti.service.interfaces.ITravelerService;
 

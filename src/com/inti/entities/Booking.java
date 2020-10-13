@@ -1,8 +1,7 @@
 package com.inti.entities;
 
 import java.io.Serializable;
-import java.sql.Date;
-
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,9 +15,6 @@ import javax.persistence.TemporalType;
 @Entity
 public class Booking implements Serializable{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,6 +24,8 @@ public class Booking implements Serializable{
 	private Integer nbDays;
 	@ManyToOne
 	private Traveler traveler;
+	@ManyToOne
+	private Hotel hotel;
 	
 	public Booking() {}
 
@@ -63,4 +61,11 @@ public class Booking implements Serializable{
 		this.traveler = traveler;
 	}
 
+	public Hotel getHotel() {
+		return hotel;
+	}
+
+	public void setHotel(Hotel hotel) {
+		this.hotel = hotel;
+	}
 }
