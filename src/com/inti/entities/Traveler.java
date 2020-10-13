@@ -23,7 +23,7 @@ public class Traveler implements Serializable{
 	private String name;
 	private String firstName;
 	private Integer age;
-	@OneToMany (mappedBy = "traveler")
+	@OneToMany(mappedBy = "traveler")
 	private Set<Booking> bookings = new HashSet<Booking>();
 	
 	public Traveler() {}
@@ -66,6 +66,6 @@ public class Traveler implements Serializable{
 
 	public void setBookings(Set<Booking> bookings) {
 		this.bookings = bookings;
-	}	
+	}
 
 }
