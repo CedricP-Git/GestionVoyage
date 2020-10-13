@@ -6,29 +6,37 @@
 	xmlns:p="http://primefaces.org/ui">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Destinations!</title>
+<title>Travelers</title>
 </head>
-<body>
-<h1>Destinations</h1>
-<h:form>
-	<h3>Longitude and latitude</h3>
-    <div class="p-formgroup-inline">
-        <div class="p-field">
-            <p:inputText id="latitude" placeholder="Latitude" 
-            value="#{destinationManagedBean.destination.latitude}"
-            > 
-            <f:validator validatorId="latitudeValidator"></f:validator>
-            </p:inputText>
-            <h:message for="latitude" style="color:red"/>
-        </div>
-        <div class="p-field">
-            <p:inputText id="longitude" placeholder="Longitude" value = "#{destinationManagedBean.destination.longitude}">
-                      <f:validator validatorId="longitudeValidator"></f:validator>
-             </p:inputText>
-             <h:message for="longitude" style="color:red"/>
-        </div>
-        <h:commandButton action="#{destinationManagedBean.saveDestination()}" value="Save"></h:commandButton>
-    </div>
-</h:form>
-</body>
+<h:body>
+	<h:form id="form1">
+		<h:panelGrid columns="2">
+			<h:outputLabel value="Name" />
+			<h:inputText value="#{destinationManagedBean.destination.name}" />
+			<h:outputLabel value="Latitude" />
+			<h:inputText value="#{destinationManagedBean.destination.latitude}">
+			    <f:validator validatorId="latitudeValidator"></f:validator>
+            </h:inputText>
+			<h:outputLabel value="Longitude" />
+			<h:inputText value="#{destinationManagedBean.destination.longitude}">
+				<f:validator validatorId="longitudeValidator"></f:validator>
+			</h:inputText>
+			<h:commandButton action="#{destinationManagedBean.saveDestination()}"
+				value="Save"></h:commandButton>
+		</h:panelGrid>
+	</h:form>
+	<h:form id="form2">
+		<p:dataTable value="#{destinationManagedBean.destinations}" var="d">
+			<p:column headerText="Name">
+				<h:outputText value="#{d.name}" />
+			</p:column>
+			<p:column headerText="Action">
+				<h:commandButton action="#{destinationManagedBean.deleteDestination(d)}"
+					value="Delete" />
+				<h:commandButton action="#{destinationManagedBean.edit(d)}"
+					value="Edit" />
+			</p:column>
+		</p:dataTable>
+	</h:form>
+</h:body>
 </html>

@@ -17,6 +17,7 @@ public class Destination implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idDestination;
+	private String name;
 	private Long longitude;
 	private Long latitude;
 	@OneToMany(mappedBy = "destination")
@@ -26,11 +27,20 @@ public class Destination implements Serializable {
 
 	}
 	
-	public Destination(Long longitude, Long latitude) {
+	public Destination(String name, Long longitude, Long latitude) {
+		this.name = name;
 		this.longitude = longitude;
 		this.latitude = latitude;
 	}
 	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	public Long getIdDestination() {
 		return idDestination;
 	}

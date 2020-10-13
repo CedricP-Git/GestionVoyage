@@ -31,9 +31,10 @@ public class Hotel implements Serializable {
 
 	}
 	
-	public Hotel(String name, int nbStar) {
+	public Hotel(String name, int nbStar, Destination destination) {
 		this.name = name;
 		this.nbStar = nbStar;
+		this.destination = destination;
 	}
 
 	public Long getIdHotel() {
