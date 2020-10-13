@@ -14,16 +14,20 @@
 			<h:outputLabel value="Name" />
 			<h:inputText value="#{destinationManagedBean.destination.name}" />
 			<h:outputLabel value="Latitude" />
-			<h:inputText value="#{destinationManagedBean.destination.latitude}">
-			    <f:validator validatorId="latitudeValidator"></f:validator>
-            </h:inputText>
+			<h:inputText id="latitude"
+				value="#{destinationManagedBean.destination.latitude}">
+				<f:validator validatorId="latitudeValidator"></f:validator>
+			</h:inputText>
 			<h:outputLabel value="Longitude" />
-			<h:inputText value="#{destinationManagedBean.destination.longitude}">
+			<h:inputText id="longitude"
+				value="#{destinationManagedBean.destination.longitude}">
 				<f:validator validatorId="longitudeValidator"></f:validator>
 			</h:inputText>
 			<h:commandButton action="#{destinationManagedBean.saveDestination()}"
 				value="Save"></h:commandButton>
 		</h:panelGrid>
+		<h:message for="latitude" style="color:red" /> <br/>
+		<h:message for="longitude" style="color:red" />		
 	</h:form>
 	<h:form id="form2">
 		<p:dataTable value="#{destinationManagedBean.destinations}" var="d">
@@ -31,7 +35,8 @@
 				<h:outputText value="#{d.name}" />
 			</p:column>
 			<p:column headerText="Action">
-				<h:commandButton action="#{destinationManagedBean.deleteDestination(d)}"
+				<h:commandButton
+					action="#{destinationManagedBean.deleteDestination(d)}"
 					value="Delete" />
 				<h:commandButton action="#{destinationManagedBean.edit(d)}"
 					value="Edit" />
