@@ -16,13 +16,13 @@ public class LatValidator implements Validator{
 	
 	@Override
 	public void validate(FacesContext context, UIComponent component, Object value) throws ValidatorException {
-		Float latitude = (Float) value;
+		Long latitude = (Long) value;
 		Pattern mask = null;
 		mask = Pattern.compile(LATITUDE_PATTERN);
 		Matcher matcher = mask.matcher(String.valueOf(latitude));
 		if(!matcher.matches()) {
 			FacesMessage message = new FacesMessage();
-			message.setDetail("Please enter a valid latitude");
+			message.setDetail("Please enter a valid latitude between -90 and 90");
 			message.setSummary("Latitude not valid");
 			message.setSeverity(FacesMessage.SEVERITY_ERROR);
 			throw new ValidatorException(message);

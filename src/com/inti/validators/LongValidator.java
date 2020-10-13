@@ -17,13 +17,13 @@ public class LongValidator implements Validator{
 
 	@Override
 	public void validate(FacesContext context, UIComponent component, Object value) throws ValidatorException {
-		Float longitude = (Float) value;
+		Long longitude = (Long) value;
 		Pattern mask = null;
 		mask = Pattern.compile(LONGITUDE_PATTERN);
 		Matcher matcher = mask.matcher(String.valueOf(longitude));
 		if(!matcher.matches()) {
 			FacesMessage message = new FacesMessage();
-			message.setDetail("Please enter a valid longitude");
+			message.setDetail("Please enter a valid longitude between -180 and 180");
 			message.setSummary("Longitude not valid");
 			message.setSeverity(FacesMessage.SEVERITY_ERROR);
 			throw new ValidatorException(message);
